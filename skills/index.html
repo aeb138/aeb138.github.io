@@ -119,17 +119,7 @@ This will all culminate with her performance on <i> Music Talks </i>, her first 
 					$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
 						doFollowingHover();
 						$(this).unbind( '.shift' );
-					});
-				}
-
-				var nonce = link.attr( 'href' ).split( '_wpnonce=' );
-				nonce = nonce[1];
-
-				$.post( "https:\/\/yellowumbrellathoughts.wordpress.com\/wp-admin\/admin-ajax.php", {
-					'action': action,
-					'_wpnonce': nonce,
-					'source': 'admin_bar',
-					'blog_id': 135272326				});
+					});				});
 			});
 		});
 	/* ]]> */
