@@ -3,8 +3,52 @@
 <link rel="stylesheet" type="text/css" media="screen" href= "/css/bootstrap.min.css" />   
 <link rel="stylesheet" type="text/css" media="screen" href= "/css/menu.css" />
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+
+.container:hover .overlay {
+  opacity: .75;
+}
+
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
+
 <title> Brekosky Skills Assignment </title>
 </head>
+
 <body>
    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
       <a class="navbar-brand" href="#"> Allison Brekosky </a>
@@ -54,18 +98,16 @@ This will all culminate with her performance on <i> Music Talks </i>, her first 
 <br> </br>
 <br> </br>
 
-<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="https://github.com/aeb138/files/blob/master/website%202.jpg?raw=true" alt="gbgpic" width="200px" height="auto" <a href = https://aeb138.github.io/skills/about </a> </img>
-<script>
-function bigImg(x) {
-x.style.height = "300px";
-x.style.width = "auto";
-}
+<h2>Fade in Overlay</h2>
+<p>Hover over the image to see the effect.</p>
 
-function normalImg(x) {
-x.style.height = "200px";
-x.style.width = "auto";
-}   
-</script>
+<div class="container">
+  <img src="https://github.com/aeb138/files/blob/master/website%202.jpg?raw=true" alt="gbgpicture" class="image" <a href = "http://www.aeb138.github.io/skills/about" </a> >
+  <div class="overlay">
+    <div class="text">about the artist.</div>
+  </div>
+</div>
+
 <p> click here to find out more about the artist! </p>			
 
 
