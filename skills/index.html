@@ -66,65 +66,19 @@ This will all culminate with her performance on <i> Music Talks </i>, her first 
 <p> click here to find out more about the artist! </p>			
 </div>
 </article>
-	
-<script type="text/javascript">
-	/* <![CDATA[ */
-		jQuery(document).ready( function($) {
-			function doFollowingHover() {
-				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
 
-				$('#wp-admin-bar-follow > a').bind( 'mouseover.unfollow', function() {
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="https://github.com/aeb138/files/blob/master/website%202.jpg?raw=true" alt="gbgpic" width="auto" height="50%">
 
-					$(this).html( "Unfollow" ).parent( 'li' ).addClass( 'unfollow' );
-				});
-				$('#wp-admin-bar-follow > a').bind( 'mouseout.unfollow', function() {
-					$(this).html( "Following" ).parent( 'li' ).removeClass( 'unfollow' );
-				});
-			}
-							doFollowingHover();
-			
-			$('#wp-admin-bar-follow > a').click( function( e ) {
-				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+<script>
+function bigImg(x) {
+  x.style.height = "64px";
+  x.style.width = "64px";
+}
 
-				e.preventDefault();
-
-				var link = $( this ), li = $( '#wp-admin-bar-follow' ), timeout = 0;
-
-				if ( li.hasClass( 'subscribed' ) ) {
-					li.removeClass( 'subscribed' ).removeClass( 'unfollow' );
-					link.html( "Follow" );
-
-					$('body').append( $( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble' );
-
-					var action = 'ab_unsubscribe_from_blog';
-				} else {
-					li.addClass( 'subscribed' ).removeClass( 'unfollow' );
-					link.html( "Following" );
-
-						var left = 131 - link.width();
-						li.append( $( 'div.wpcom-bubble' ).css( { left: '-' + left + 'px' } ) );
-						$( 'div.bubble-txt', 'div.wpcom-bubble' ).html( "New posts from this blog will now appear in <a target=\"_blank\" href=\"http:\/\/wordpress.com\/\">your reader<\/a>. You can manage email alerts from your <a target=\"_blank\" href=\"http:\/\/wordpress.com\/following\/edit\/\">subscriptions page<\/a>." );
-
-						$( 'div.wpcom-bubble.action-bubble' ).addClass( 'fadein' );
-
-						setTimeout( function() {
-							$('body').on( 'click.bubble touchstart.bubble', function(e) {
-								if ( !$(e.target).hasClass('wpcom-bubble') && !$(e.target).parents( 'div.wpcom-bubble' ).length )
-									hideBubble();
-							});
-							setTimeout( hideBubble, 15000 );
-						}, 500 );
-
-					var action = 'ab_subscribe_to_blog';
-					$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
-						doFollowingHover();
-						$(this).unbind( '.shift' );
-					});				});
-			});
-		});
-	/* ]]> */
-	</script>
-   
+function normalImg(x) {
+  x.style.height = "32px";
+  x.style.width = "32px";
+}   
 
 </p>
 </body>
